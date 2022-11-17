@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/certified-yourboyserge.svg)](https://forthebadge.com)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ModalR
 
-## Available Scripts
+ModalR is a React Modal dialog plugin.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+With [npm](https://www.npmjs.com) package manager
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install modal-r
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+### Basic
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Basic Modal](./basic-modal.png)
 
-### `npm run build`
+```javascript
+import { Modal } from modal-r
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+// basic modal
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<Modal
+    isOpen
+    setIsOpen
+/>
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Note that `isOpen` and `setIsOpen` are necessary to toggle the modal.
 
-### `npm run eject`
+### Adding your content
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Basic Content Modal](./custom-elements.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```javascript
+import { Modal } from modal-r
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+// Custom title, body and footer
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+const ModalContent = () => {
+    return (
+        <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Nunc id cursus metus
+            aliquam eleifend mi in nulla posuere. Vitae sapien pellentesque habitant
+            morbi. Ac turpis egestas sed tempus urna et. Etiam sit amet nisl purus
+            in mollis nunc sed id. Varius vel pharetra vel turpis nunc. Cursus
+            mattis molestie a iaculis at erat pellentesque adipiscing. Vel risus
+            commodo viverra maecenas accumsan lacus. Pellentesque habitant morbi
+            tristique senectus et. Risus quis varius quam quisque id diam. Aliquet
+            enim tortor at auctor urna nunc id cursus.
+        </div>
+    )
+}
 
-## Learn More
+const ModalFooter = () => {
+    return <Button label="Save"></Button>
+}
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<Modal
+    isOpen={isOpen}
+    setIsOpen={setIsOpen}
+    title="My Title"
+    bodyContent={<ModalContent />}
+    footerContent={<ModalFooter/>}
+/>
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Advanced
 
-### Code Splitting
+The modal component accepts multiple parameters for further customization.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```javascript
+isOpen,                             //* required set modal state
+setIsOpen,                          //* required toggle modal state
+className = "modal",                //set a className to the modal elemen (Default is "modal")
+id,                                 //set an id to the modal element
+testId,                             //set a test id to the modal element
+overlayClassName = "overlay",       //set a className to the overlay element (Default is "overlay")
+headerClassName = "modal-header",   //set a className to the header element (Default is "modal-header")
+title = "Modal",                    //set a custom title (Default is "Modal")
+titleClassName = "modal-title",     //set a className to the title element (Default is "modal-title")
+bodyContent = "",                   //set a body element, must be a node, can be plain HTML, a function returning HTML or a React component (Default is an empty string "")
+bodyClassName = "modal-body",       //set a className to the body element (Default is "modal-body")
+footerContent,                      //set a footer element, must be a node, can be plain HTML, a function returning HTML or a React component (Default is an empty string "")
+footerClassName = "modal-footer",   //set a className to the footer element (Default is "modal-footer")
+transition=400,                     //set a transition duration to the appearance of the modal (Default is 400ms)
+aria= {
+    labelledby: "heading",
+    describedby: "full_description"
+},                                  //set aria elements to the modal (these are the default)
+role="dialog"                       //set a role to the modal (Default is "dialog")
+```
 
-### Analyzing the Bundle Size
+Note that you can use your own CSS classes to handle styling. But be aware that by doing so, you will override all of the element's default styles.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contributing
 
-### Making a Progressive Web App
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Please make sure to update tests as appropriate.
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[MIT](https://choosealicense.com/licenses/mit/)
