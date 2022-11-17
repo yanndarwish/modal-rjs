@@ -1,8 +1,8 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/certified-yourboyserge.svg)](https://forthebadge.com)
 
-# ModalR
+# modal-rjs
 
-ModalR is a React Modal dialog plugin.
+modal-rjs is a React Modal dialog plugin.
 
 ## Installation
 
