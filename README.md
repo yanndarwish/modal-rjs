@@ -9,7 +9,7 @@ ModalR is a React Modal dialog plugin.
 With [npm](https://www.npmjs.com) package manager
 
 ```bash
-npm install modal-r
+npm install modal-rjs
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ npm install modal-r
 ![Basic Modal](./basic-modal.png)
 
 ```javascript
-import { Modal } from modal-r
+import { Modal } from modal-rjs
 
 // basic modal
 
@@ -36,7 +36,7 @@ Note that `isOpen` and `setIsOpen` are necessary to toggle the modal.
 ![Basic Content Modal](./custom-elements.png)
 
 ```javascript
-import { Modal } from modal-r
+import { Modal } from modal-rjs
 
 // Custom title, body and footer
 
