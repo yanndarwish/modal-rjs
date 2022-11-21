@@ -1,6 +1,6 @@
 {
 	"name": "modal-rjs",
-	"version": "0.2.8",
+	"version": "0.2.91",
 	"main": "dist/index.js",
 	"module": "dist/index.js",
 	"files": [
