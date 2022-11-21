@@ -93,12 +93,14 @@ aria= {
     describedby: "full_description"
 },                                  //set aria elements to the modal (these are the default)
 role="dialog"                       //set a role to the modal (Default is "dialog")
+closeColor="black"                  //set the color of the close icon (You con only choose between "black" and "white" Default is "black")
 ```
 
 Note that you can use your own CSS classes to handle styling. But be aware that by doing so, you will override all of the element's default styles.
 
 ## Contributing
 
+You can check the repo [https://github.com/yanndarwish/modal-rjs](https://github.com/yanndarwish/modal-rjs).
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 

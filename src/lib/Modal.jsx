@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useCallback } from "react"
 import { useSpring, animated, easings } from "react-spring"
 import "./Modal.css"
 import close from "./close.svg"
+import closeWhite from "./close-white.svg"
 
 const Modal = ({
 	isOpen,
@@ -23,6 +24,7 @@ const Modal = ({
 		describedby: "full_description",
 	},
 	role = "dialog",
+	closeColor = "black",
 }) => {
 	const overlayRef = useRef()
 
@@ -32,7 +34,7 @@ const Modal = ({
 			easing: easings.easeInOutQuad,
 		},
 		opacity: isOpen ? 1 : 0,
-		transform: isOpen ? `translateY(0%)` : `translateY(-100%)`,
+		transform: isOpen ? `translateY(0%)` : `translateY(100px)`,
 	})
 
 	const closeModal = (e) => {
@@ -63,7 +65,7 @@ const Modal = ({
 						{title}
 					</h1>
 					<img
-						src={close}
+						src={closeColor === "white" ? closeWhite : close}
 						alt="close icon"
 						className="modal-close"
 						onClick={() => setIsOpen(false)}
@@ -86,7 +88,7 @@ const Modal = ({
 			{isOpen ? (
 				<div ref={overlayRef} onClick={closeModal} className={overlayClassName}>
 					<animated.div style={animation}>
-						<Dialog isOpen={isOpen} />
+					<Dialog isOpen={isOpen} />
 					</animated.div>
 				</div>
 			) : null}
@@ -94,4 +96,4 @@ const Modal = ({
 	)
 }
 
-export default Modal
+export { Modal }
