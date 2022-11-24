@@ -101,24 +101,24 @@ The modal component accepts multiple parameters for further customization.
 
 ```javascript
 isOpen, //* required set modal state
-	setIsOpen, //* required toggle modal state
-	(className = "modal"), //set a className to the modal elemen (Default is "modal")
-	id, //set an id to the modal element
-	testId, //set a test id to the modal element
-	(overlayClassName = "overlay"), //set a className to the overlay element (Default is "overlay")
-	(headerClassName = "modal-header"), //set a className to the header element (Default is "modal-header")
-	(title = "Modal"), //set a custom title (Default is "Modal")
-	(titleClassName = "modal-title"), //set a className to the title element (Default is "modal-title")
-	(bodyContent = ""), //set a body element, must be a node, can be plain HTML, a function returning HTML or a React component (Default is an empty string "")
-	(bodyClassName = "modal-body"), //set a className to the body element (Default is "modal-body")
-	footerContent, //set a footer element, must be a node, can be plain HTML, a function returning HTML or a React component (Default is an empty string "")
-	(footerClassName = "modal-footer"), //set a className to the footer element (Default is "modal-footer")
-	(transition = 400), //set a transition duration to the appearance of the modal (Default is 400ms)
-	(aria = {
-		labelledby: "heading",
-		describedby: "full_description",
-	}), //set aria elements to the modal (these are the default)
-	(role = "dialog") //set a role to the modal (Default is "dialog")
+setIsOpen, //* required toggle modal state
+className = "modal", //set a className to the modal elemen (Default is "modal")
+id, //set an id to the modal element
+testId, //set a test id to the modal element
+overlayClassName = "overlay", //set a className to the overlay element (Default is "overlay")
+headerClassName = "modal-header", //set a className to the header element (Default is "modal-header")
+title = "Modal", //set a custom title (Default is "Modal")
+titleClassName = "modal-title", //set a className to the title element (Default is "modal-title")
+bodyContent = "", //set a body element, must be a node, can be plain HTML, a function returning HTML or a React component (Default is an empty string "")
+bodyClassName = "modal-body", //set a className to the body element (Default is "modal-body")
+footerContent, //set a footer element, must be a node, can be plain HTML, a function returning HTML or a React component (Default is an empty string "")
+footerClassName = "modal-footer", //set a className to the footer element (Default is "modal-footer")
+transition = 400, //set a transition duration to the appearance of the modal (Default is 400ms)
+aria = {
+    labelledby: "heading",
+    describedby: "full_description",
+}, //set aria elements to the modal (these are the default)
+role = "dialog" //set a role to the modal (Default is "dialog")
 closeColor = "black" //set the color of the close icon (You con only choose between "black" and "white" Default is "black")
 ```
 
