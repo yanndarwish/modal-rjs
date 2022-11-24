@@ -51,8 +51,10 @@ const Modal = ({
   const Dialog = () => {
     return /*#__PURE__*/React.createElement("div", {
       id: id,
+      "data-testid": testId,
       className: className,
-      role: role
+      role: role,
+      aria: aria
     }, /*#__PURE__*/React.createElement("div", {
       className: headerClassName
     }, /*#__PURE__*/React.createElement("h1", {

@@ -59,7 +59,7 @@ const Modal = ({
 
 	const Dialog = () => {
 		return (
-			<div id={id} className={className} role={role}>
+			<div id={id} data-testid={testId} className={className} role={role} aria={aria}>
 				<div className={headerClassName}>
 					<h1 id="heading" className={titleClassName}>
 						{title}
