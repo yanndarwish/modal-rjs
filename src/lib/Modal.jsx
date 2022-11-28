@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useCallback } from "react"
 import { useSpring, animated, easings } from "react-spring"
+import PropTypes from "prop-types"
 import "./Modal.css"
 import close from "./close.svg"
 import closeWhite from "./close-white.svg"
@@ -59,7 +60,13 @@ const Modal = ({
 
 	const Dialog = () => {
 		return (
-			<div id={id} data-testid={testId} className={className} role={role} aria={aria}>
+			<div
+				id={id}
+				data-testid={testId}
+				className={className}
+				role={role}
+				aria={aria}
+			>
 				<div className={headerClassName}>
 					<h1 id="heading" className={titleClassName}>
 						{title}
@@ -88,12 +95,50 @@ const Modal = ({
 			{isOpen ? (
 				<div ref={overlayRef} onClick={closeModal} className={overlayClassName}>
 					<animated.div style={animation}>
-					<Dialog isOpen={isOpen} />
+						<Dialog isOpen={isOpen} />
 					</animated.div>
 				</div>
 			) : null}
 		</>
 	)
+}
+
+Modal.propTypes = {
+	isOpen: PropTypes.bool.isRequired,
+	setIsOpen: PropTypes.func.isRequired,
+	className: PropTypes.string,
+	id: PropTypes.string,
+	testId: PropTypes.string,
+	overlayClassName: PropTypes.string,
+	headerClassName: PropTypes.string,
+	title: PropTypes.string,
+	titleClassName: PropTypes.string,
+	bodyContent: PropTypes.node,
+	bodyClassName: PropTypes.string,
+	footerContent: PropTypes.node,
+	footerClassName: PropTypes.string,
+	transition: PropTypes.number,
+	aria: PropTypes.object,
+	role: PropTypes.string,
+	closeColor: PropTypes.string,
+}
+
+Modal.defaultProps = {
+	className: "modal",
+	overlayClassName: "overlay",
+	headerClassName: "modal-header",
+	title: "Modal",
+	titleClassName: "modal-title",
+	bodyContent: "",
+	bodyClassName: "modal-body",
+	footerClassName: "modal-footer",
+	transition: 400,
+	aria: {
+		labelledby: "heading",
+		describedby: "full_description",
+	},
+	role: "dialog",
+	closeColor: "black",
 }
 
 export { Modal }

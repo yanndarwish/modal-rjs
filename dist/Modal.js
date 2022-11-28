@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated, easings } from "react-spring";
+import PropTypes from "prop-types";
 import "./Modal.css";
 import close from "./close.svg";
 import closeWhite from "./close-white.svg";
@@ -81,5 +82,41 @@ const Modal = ({
   }, /*#__PURE__*/React.createElement(Dialog, {
     isOpen: isOpen
   }))) : null);
+};
+Modal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  setIsOpen: PropTypes.func.isRequired,
+  className: PropTypes.string,
+  id: PropTypes.string,
+  testId: PropTypes.string,
+  overlayClassName: PropTypes.string,
+  headerClassName: PropTypes.string,
+  title: PropTypes.string,
+  titleClassName: PropTypes.string,
+  bodyContent: PropTypes.node,
+  bodyClassName: PropTypes.string,
+  footerContent: PropTypes.node,
+  footerClassName: PropTypes.string,
+  transition: PropTypes.number,
+  aria: PropTypes.object,
+  role: PropTypes.string,
+  closeColor: PropTypes.string
+};
+Modal.defaultProps = {
+  className: "modal",
+  overlayClassName: "overlay",
+  headerClassName: "modal-header",
+  title: "Modal",
+  titleClassName: "modal-title",
+  bodyContent: "",
+  bodyClassName: "modal-body",
+  footerClassName: "modal-footer",
+  transition: 400,
+  aria: {
+    labelledby: "heading",
+    describedby: "full_description"
+  },
+  role: "dialog",
+  closeColor: "black"
 };
 export { Modal };

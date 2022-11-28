@@ -1,6 +1,6 @@
 {
 	"name": "modal-rjs",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"main": "dist/index.js",
 	"module": "dist/index.js",
 	"files": [
@@ -8,8 +8,9 @@
 		"README.md"
 	],
 	"dependencies": {
-		"react-spring": "^9.5.5",
-		"@babel/cli": "^7.17.10"
+		"@babel/cli": "^7.17.10",
+		"prop-types": "^15.8.1",
+		"react-spring": "^9.5.5"
 	},
 	"devDependencies": {
 		"babel-preset-react-app": "^10.0.1",
