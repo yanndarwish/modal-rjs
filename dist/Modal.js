@@ -54,8 +54,7 @@ const Modal = ({
       id: id,
       "data-testid": testId,
       className: className,
-      role: role,
-      aria: aria
+      role: role
     }, /*#__PURE__*/React.createElement("div", {
       className: headerClassName
     }, /*#__PURE__*/React.createElement("h1", {
